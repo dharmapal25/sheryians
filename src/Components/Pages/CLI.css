@@ -1,0 +1,22 @@
+* {
+    scrollbar-width: thin;
+
+}
+span[name="react-console-emulator__promptLabel"] {
+    color: #2aaa64 !important;
+    margin-top: 2% !important;
+}
+
+input[name="react-console-emulator__input"] {
+    margin-top: 2% !important;
+
+}
+
+.CLI-div {
+    height: 80vh;
+    overflow: auto;
+}
+
+div [name="react-console-emulator"] {
+    height: 100% !important;
+}
