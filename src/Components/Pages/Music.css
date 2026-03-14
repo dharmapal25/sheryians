@@ -1,0 +1,10 @@
+.music-div {
+    display: flex;
+    margin: 5px;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.musics {
+    width: 25%;
+}

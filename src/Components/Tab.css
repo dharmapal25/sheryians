@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    color: #cfcfcf;
+    font-size: 20px;
+}
+
+h1 {
+    position: relative;
+    font-size: 100px;
+}
+
+.tab-top-container .hr {
+    /* width: 100%; */
+    height: 0.1px;
+    border: 0.1px solid #5757574d;
+    box-shadow: 0 1.5px 2px #91919131;
+}
+
+.tab-top-container {
+    position: absolute;
+    /* background: #272935ef; */
+    top: 1.5% !important;
+    background: #222020e1;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    margin: 5px;
+    min-width: 30vw !important;
+    max-width: 99vw !important;
+    cursor: default !important;
+    min-height: 20vw !important;
+    max-height: 60vw !important;
+    outline: 1px solid #444444;
+}
+
+
+.maxwidth {
+    /* position: fixed !important;
+    top: 0% !important ; */
+    transform: translate(0.2%,4%) !important ;
+    width: 100% !important;
+    /* height: 87% !important; */
+    background: #2c2c2c ;
+    transition: 0.1s;
+
+}
+
+
+
+/* ----------------- */
+
+
+
+.nav-tab {
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 9px;
+    cursor: default;
+    background: #3a3a3a83;
+}
+
+.tab-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.nav-tab .tab-icons .icon-1 {
+    background: #F05057;
+    border-radius: 50%;
+    height: 16.5px;
+    width: 16.5px;
+    cursor: default;
+    text-align: center;
+}
+
+.nav-tab .tab-icons .icon-2 {
+    background: #F8C338;
+    border-radius: 50%;
+    height: 16.5px;
+    width: 16.5px;
+    cursor: default;
+    text-align: center;
+}
+
+.nav-tab .tab-icons .icon-3 {
+    background: #3AE64B;
+    border-radius: 50%;
+    height: 16.5px;
+    width: 16.5px;
+    cursor: default;
+    text-align: center;
+    
+}
+
+.nav-tab .tab-icons .icons {
+    margin-bottom: 15%;
+    height: 16.5px;
+    width: 16.5px;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 2px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.nav-tab .tab-icons .icon-3 .icons {
+    rotate: 140deg;
+}
+
+.nav-tab .tab-icons .icons:hover {
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}

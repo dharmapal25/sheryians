@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    color: #cfcfcf;
+    scrollbar-width: none
+}
+
+.appJsx-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: center;
+    z-index: -1
+}
+
+.desktop-view .mac-nav .logo-navigators .apple_logo {
+    width: 20px;
+    cursor: default
+}
+
+.desktop-view .mac-nav {
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 33px;
+    background: #5e5e5e27;
+    cursor: default;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px)
+}
+
+.desktop-view .mac-nav .logo-navigators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 17px
+}
+
+.icons-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw
+}
+
+.wifi-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px
+}
+
+.desktop-view .mac-nav .wifi-time .icons-div .control {
+    height: 17px
+}
+
+.desktop-view .mac-nav .wifi-time .icons-div .wifi {
+    height: 20px
+}
+
+.desktop-view .mac-nav .wifi-time .icons-div .search {
+    height: 23px
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    color: #cfcfcf
+}
+
+.jod {
+    padding: 20px;
+    background: #a71818
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 3%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.bottom-nav .software-icons {
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff13;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: 17px;
+    gap: 2vw;
+    padding: 5px;
+    border: 1px solid #cccccc8c;
+    transition: .5s
+}
+
+.software-icons .icon-div {
+    padding: 3px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.bar {
+    height: 50px;
+    border: 1px solid #ffffff6b;
+    margin: 0 10px
+}
+
+.icon-div .icon {
+    width: 55px;
+    margin: 5px;
+    transition: .5s
+}
+
+.icon:hover {
+    transition: .3s;
+    width: 90px;
+    transform: translateY(-20px)
+}
+
+.icon:hover+.icon {
+    width: 65px;
+    transform: translateY(-13px)
+}
+
+.icon:has(+.icon:hover) {
+    width: 65px;
+    transform: translateY(-13px)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    color: #cfcfcf;
+    font-size: 20px
+}
+
+h1 {
+    position: relative;
+    font-size: 100px
+}
+
+.tab-top-container .hr {
+    width: 100%;
+    height: .1px;
+    border: .1px solid #5757574d;
+    box-shadow: 0 2px 2px #91919131
+}
+
+.tab-top-container {
+    position: absolute;
+    background: #272935;
+    border-radius: 10px;
+    margin: 5px;
+    min-width: 30vw !important;
+    max-width: 99vw !important;
+    cursor: default !important;
+    min-height: 20vw !important;
+    max-height: 60vw !important
+}
+
+.nav-tab {
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 9px;
+    cursor: default;
+    background: #3a3a3a83
+}
+
+.tab-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px
+}
+
+.nav-tab .tab-icons .icon-1 {
+    background: #f05057;
+    border-radius: 50%;
+    height: 16.5px;
+    width: 16.5px;
+    cursor: default;
+    text-align: center
+}
+
+.nav-tab .tab-icons .icon-2 {
+    background: #f8c338;
+    border-radius: 50%;
+    height: 16.5px;
+    width: 16.5px;
+    cursor: default;
+    text-align: center
+}
+
+.nav-tab .tab-icons .icon-3 {
+    background: #3ae64b;
+    border-radius: 50%;
+    height: 16.5px;
+    width: 16.5px;
+    cursor: default;
+    text-align: center
+}
+
+.nav-tab .tab-icons .icons {
+    height: 16.5px;
+    width: 16.5px;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 2px;
+    opacity: 0;
+    transition: all .3s ease-in-out
+}
+
+.nav-tab .tab-icons .icon-3 .icons {
+    rotate: 140deg
+}
+
+.nav-tab .tab-icons .icons:hover {
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+    opacity: 1
+}
+
+* {
+    box-sizing: border-box;
+    outline: none
+}
+
+.calt-main-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    background: #000
+}
+
+.calt-main-div .input {
+    width: 100%;
+    height: 30%;
+    background: #bdffe9;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 0 20px 20px 0;
+    font-size: 7vw
+}
+
+.calt-main-div .calt-cols {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #555;
+    width: 100%;
+    height: 70%;
+    overflow: hidden
+}
+
+.calt-cols .col {
+    width: 100%;
+    height: 100%;
+    display: flex
+}
+
+.col .btn-num {
+    width: 97%;
+    height: 97%;
+    margin: 1px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1.8vw;
+    color: #fff;
+    background: #7272722d
+}
+
+.col .oprs {
+    background: #757575be
+}
+
+sup {
+    font-size: 1vw
+}                                         
