@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import "./Notepad.css"
+
 const Notepad = () => {
 
     const [popup, setPopup] = useState("none");
     const [change, setChange] = useState("");
     const [changetxt, setChangetxt] = useState("");
-    const [filearr, setFilearr] = useState([]);
-    const [fileobj, setFileobj] = useState({});
+    const [selectIdx, setSelectIdx] = useState(null);
 
+    // reload pe localStorage se data load hoga
+    const [filearr, setFilearr] = useState(() => {
+        const saved = localStorage.getItem("arr");
+        return saved ? JSON.parse(saved) : [];
+    });
 
     function submitData(e) {
         e.preventDefault();
@@ -15,67 +20,85 @@ const Notepad = () => {
             file: e.target.elements.file.value,
             data: e.target.elements.data.value
         }
-        setFilearr([newFile, ...filearr])
-        setPopup("none")
+        setFilearr([newFile, ...filearr]);
+
+        setChange("");
+        setChangetxt("");
+        setPopup("none");
     }
 
+    // Textarea content update
+    function handleContentChange(e, index) {
+        const updatedArr = filearr.map((item, i) =>
+            i === index ? { ...item, data: e.target.value } : item
+        );
+        setFilearr(updatedArr);
+    }
 
     useEffect(() => {
         localStorage.setItem("arr", JSON.stringify(filearr));
-    }, [filearr])
-
-    // localStorage.setItem("arr", JSON.stringify(filearr));
-
-
-    let arrData = localStorage.getItem("arr");
-
-    JSON.parse(arrData);
-
-    console.log(JSON.parse(arrData))
-
+    }, [filearr]);
 
     return (
         <>
-            <form className='pop-up' style={{ display: popup }} onSubmit={submitData} >
-                <h1 className='cut' onClick={() => setPopup("none")} > ✖ </h1>
-                <input type="text" name='file' value={change} placeholder='Enter file name..' required onChange={(e) => setChange(e.target.value)} />
-                <textarea type="text" name='data' className='textarea' defaultValue={changetxt} placeholder='Wriite something..' onChange={(e) => setChangetxt(e.target.value)} />
-                <button className='save' onClick={() => setPopup("none")} >Save</button>
+            <form className='pop-up' style={{ display: popup }} onSubmit={submitData}>
+                <h1 className='cut' onClick={() => setPopup("none")}> ✖ </h1>
+                <input
+                    type="text"
+                    name='file'
+                    value={change}
+                    placeholder='Enter file name..'
+                    required
+                    onChange={(e) => setChange(e.target.value)}
+                />
+                <textarea
+                    name='data'
+                    className='textarea'
+                    value={changetxt}
+                    placeholder='Write something..'
+                    onChange={(e) => setChangetxt(e.target.value)}
+                />
+                <button className='save' type="submit">Save</button>
             </form>
 
-
             <div className="main-notes-div">
-
                 <div className="notes-div">
 
                     <div className="filename-div">
-
                         <div className="new-file-div">
                             <h3>Files</h3>
-                            <span className="new-file" onClick={() => setPopup(!popup)} >➕</span>
+                            <span className="new-file" onClick={() => setPopup(popup === "none" ? "block" : "none")}>➕</span>
                             <span className="new-file">💬</span>
                         </div>
-                        {/* <span className='filename' >main.txt</span> */}
-                        {/* <input type="text" className='filename' value={"main.txt"} readOnly />
-                        <input type="text" className='filename' value={"jod.txt"} readOnly /> */}
 
                         {filearr.map((item, index) => (
-                            <input key={index} type="text" className='filename' value={item.file} readOnly />
+                            <input
+                                key={index}
+                                type="text"
+                                className='filename'
+                                value={item.file}
+                                readOnly
+                                onClick={() => setSelectIdx(index)}
+                                style={{ cursor: "pointer", borderRadius : "5px", fontSize : "19px" ,background: selectIdx === index ? "#8b8b8bab" : "" }}
+                            />
                         ))}
-
                     </div>
+
                     <div className="filecontants-div">
-                        {filearr.map((item, index) => (
-                        <textarea className="filecontants" value={item.data} ></textarea>
-                        ))}
+
+                        {selectIdx !== null && filearr[selectIdx] && (
+                            <textarea
+                                className="filecontants"
+                                value={filearr[selectIdx].data}
+                                onChange={(e) => handleContentChange(e, selectIdx)}
+                            />
+                        )}
                     </div>
 
                 </div>
             </div>
-
-
         </>
     )
 }
 
-export default Notepad
+export default Notepad;
