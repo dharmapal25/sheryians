@@ -7,6 +7,7 @@ import CLI from './Pages/CLI';
 import Notepad from './Pages/Notepad';
 import Music from './Pages/Music';
 import Empty from './Pages/Empty';
+import Setting from './Pages/Setting';
 
 const Tab = ({ appName, closeApp }) => {
 
@@ -29,12 +30,17 @@ const Tab = ({ appName, closeApp }) => {
                 return <CLI />
 
             case "notepad":
-                obj = { terminal: "Notepad" }
+                obj = { nodepad: "Notepad" }
                 return <Notepad />
 
             case "music":
-                obj = { terminal: "music" }
+                obj = { music: "music" }
                 return <Music />
+
+            case "setting":
+                obj = { setting: "Setting" }
+                return <Setting />
+
             default:
                 return <Empty />
         }
@@ -63,7 +69,7 @@ const Tab = ({ appName, closeApp }) => {
             onClick={() => setZIndex(ZIndex + 1)}>
             {/* {console.log(widthTab)} */}
 
-            <div className='nav-tab' >
+            <div className='nav-tab' onDoubleClick={maxWidthTab}>
                 <div className="tab-icons">
                     <div className="icon-1 " onClick={() => closeApp(appName)} >
                         <svg className='icons' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -90,6 +96,7 @@ const Tab = ({ appName, closeApp }) => {
                     <p> {(appName == "calculator") ? "Calculator" : ""}</p>
                     <p> {(appName == "notepad") ? "Notepad" : ""}</p>
                     <p> {(appName == "music") ? "Music" : ""}</p>
+                    <p> {(appName == "setting") ? "Setting" : ""}</p>
 
                 </div>
             </div>
