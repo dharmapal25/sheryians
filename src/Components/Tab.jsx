@@ -6,15 +6,12 @@ import Calculator from './Pages/Calculator';
 import CLI from './Pages/CLI';
 import Notepad from './Pages/Notepad';
 import Music from './Pages/Music';
+import Empty from './Pages/Empty';
 
 const Tab = ({ appName, closeApp }) => {
 
     const [ZIndex, setZIndex] = useState(1);
     const [widthTab, setwidthTab] = useState(true);
-    const [hightTab, sethightTab] = useState(200);
-    const [maxSize, setMaxSize] = useState([widthTab, hightTab]);
-
-    // console.log(maxSize)
 
     let obj;
 
@@ -25,18 +22,21 @@ const Tab = ({ appName, closeApp }) => {
                 return <Vscode />
             case "calculator":
                 obj = { Calculator: "Calculator" }
-                return <Calculator style={{ width: "503px" }} />
+                return <Calculator style={{ maxWidth : "503px" }} />
+
             case "terminal":
                 obj = { terminal: "Terminal" }
                 return <CLI />
+
             case "notepad":
                 obj = { terminal: "Notepad" }
                 return <Notepad />
+
             case "music":
                 obj = { terminal: "music" }
                 return <Music />
             default:
-                return null
+                return <Empty />
         }
     }
 
@@ -51,7 +51,7 @@ const Tab = ({ appName, closeApp }) => {
     if (!appName) return null;
 
     return (
-        <Rnd className={`tab-top-container ${(!widthTab) ? "maxwidth" : "" }`}
+        <Rnd className={`tab-top-container ${(!widthTab) ? "maxwidth" : ""}`}
             default={{
                 x: Math.floor(Math.random() * 750),
                 y: Math.floor(Math.random() * 380),
@@ -59,9 +59,9 @@ const Tab = ({ appName, closeApp }) => {
                 // width: widthTab,
                 // height: 200,
             }}
-            style={{ zIndex: ZIndex,width : "100vw" }}
+            style={{ zIndex: ZIndex, width: "100vw" }}
             onClick={() => setZIndex(ZIndex + 1)}>
-                {/* {console.log(widthTab)} */}
+            {/* {console.log(widthTab)} */}
 
             <div className='nav-tab' >
                 <div className="tab-icons">
