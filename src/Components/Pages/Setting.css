@@ -30,11 +30,64 @@
 
 
 .Setting-body {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     background: #696969b0;
     width: 100%;
-    /* height: 80vh; */
-    
+    height: 80vh;
+    overflow: auto !important;
+
+}
+
+
+.Themes-div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.theme-image {
+    height: 13vw;
+    border-radius: 10px;
+}
+
+.default-div,
+.dark-div,
+.light-div,
+.darkblue-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Themes-btn {
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background:#929292;
+    color: #ecfffc;
+    font-size: 14px;
+}
+
+.wallpaper-image {
+    height: 20vh;
+    border-radius: 10px;
+    overflow: hidden !important;
+}
+
+.wallpaper-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wallpaper-images-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
 }

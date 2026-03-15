@@ -46,10 +46,11 @@ h1 {
     top: 0% !important ; */
     transform: translate(0.2%,4%) !important ;
     width: 100% !important;
-    /* height: 87% !important; */
+    height: 85% !important;
     background: #2c2c2c ;
     transition: 0.1s;
-
+   background: #222531;
+   overflow: hidden !important;
 }
 
 

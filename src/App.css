@@ -20,8 +20,9 @@ body {
     height: 100%;
     position: fixed;
     background: center;
-    z-index: -1
+    z-index: -1;
 }
+
 
 .desktop-view .mac-nav .logo-navigators .apple_logo {
     width: 20px;
@@ -312,4 +313,4 @@ h1 {
 
 sup {
     font-size: 1vw
-}                                         
+}
