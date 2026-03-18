@@ -9,10 +9,22 @@
 
 .new-file-div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     /* gap: 30%; */
     margin-bottom: 10%;
+
 }
+
+.new-file-menu {
+    height: 30px;
+    cursor: pointer;
+
+}
+
+.new-file-menu:active {
+    transform: rotateY(30deg);
+}
+
 .main-notes-div {
     display: flex;
     flex-direction: column;
@@ -24,6 +36,15 @@
     height: 78vh;
     padding: 5px;
     border-radius: 0 0 0 10px;
+}
+
+.menu-out {
+    position: absolute;
+    left: -10%;  
+}
+
+.menu-in {
+    position: static;
 }
 
 .filename {
@@ -77,6 +98,7 @@
     font-size: 20px;
     padding: 10px;
     cursor: pointer;
+    height: 50px;
 }
 
 .save {

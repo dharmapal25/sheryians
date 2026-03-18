@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import add_notes from "../../Images/Icons/add_note.png"
+import menu from "../../Images/Icons/menu.png"
+import menuLight from "../../Images/Icons/bars-light.png"
+import close from "../../Images/Icons/close.png"
 import "./Notepad.css"
 
 const Notepad = () => {
@@ -7,6 +11,8 @@ const Notepad = () => {
     const [change, setChange] = useState("");
     const [changetxt, setChangetxt] = useState("");
     const [selectIdx, setSelectIdx] = useState(null);
+    const [menu, setMenu] = useState(false);
+
 
     // reload pe localStorage se data load hoga
     const [filearr, setFilearr] = useState(() => {
@@ -39,10 +45,16 @@ const Notepad = () => {
         localStorage.setItem("arr", JSON.stringify(filearr));
     }, [filearr]);
 
+
+    function menuMove() {
+        setMenu(!menu)
+    }
+
     return (
         <>
             <form className='pop-up' style={{ display: popup }} onSubmit={submitData}>
-                <h1 className='cut' onClick={() => setPopup("none")}> ✖ </h1>
+
+                     <img className='cut' onClick={() => setPopup("none")} src={close} alt="close" />
                 <input
                     type="text"
                     name='file'
@@ -64,11 +76,16 @@ const Notepad = () => {
             <div className="main-notes-div">
                 <div className="notes-div">
 
-                    <div className="filename-div">
+                    <div className={`filename-div ${(menu) ? "menu-out" : "menu-in"} `}>
                         <div className="new-file-div">
-                            <h3>Files</h3>
-                            <span className="new-file" onClick={() => setPopup(popup === "none" ? "block" : "none")}>➕</span>
-                            <span className="new-file">💬</span>
+                            {/* <h3>Files</h3> */}
+                            <span className="new-file" onClick={() => setPopup(popup === "none" ? "block" : "none")}>
+                                <img src={add_notes} alt="add_notes" />
+                            </span>
+                            {/* <span > */}
+                                <img src={menu} alt="menu" className="new-file-menu"  onClick={menuMove} />
+
+                            {/* </span> */}
                         </div>
 
                         {filearr.map((item, index) => (
